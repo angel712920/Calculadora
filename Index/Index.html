@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerical_Methods</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <h1>Numerical Methods</h1>
+    <label for="Message">Enter the number of equations:</label>
+    <input type="number" id="equations" name="equations" min="2" max="5" />
+    <button onclick="validateAndProcess()">Send</button>
+    <p id="result"></p>
+
+    <div id="inputs-container"></div>
+    <br />
+    <div id="Methods_Button"></div>
+    <p id="Advice"></p>
+
+    <!-- Menu -->
+    <div id="Menu" class="horizontal-menu">
+      <a
+        href="#"
+        class="active"
+        onclick="setActive(this); loadPage('../Methods/gauss-jordan.html')"
+        >Gauss-Jordan</a
+      >
+      <a href="#" onclick="setActive(this); loadPage('../Methods/inversa.html')"
+        >Inversa</a
+      >
+    </div>
+    <script>
+      function setActive(clickedElement) {
+        const menuLinks = document.querySelectorAll("#Menu a");
+        menuLinks.forEach((link) => link.classList.remove("active"));
+        clickedElement.classList.add("active");
+      }
+    </script>
+
+    <!-- Iframe para mostrar contenido -->
+    <div id="content" class="typesmethods">
+      <iframe
+        id="contentFrame"
+        src="gauss.html"
+        style="width: 100%; height: 500px; border: none"
+      ></iframe>
+    </div>
+    <p class="Create_by">
+      Formato <br>
+      X1 = X -- X2 = Y -- X3 = Z <br /><br />
+
+      Create by:<br />
+      Steven Hernán Velásquez Santacruz <br />
+      222036019 <br />
+      Angel Daniel Ordoñez Santacruz <br />
+      222036024 <br />
+      Manuel Jesus David Rosero Verea <br />
+      222036037 <br />
+      Jesus Ricardo Villota Iguad <br />
+      222036052
+    </p>
+  </body>
+</html>
